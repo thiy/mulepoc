@@ -19,15 +19,26 @@ http://www.mulesoft.org/schema/mule/ee/jdbc http://www.mulesoft.org/schema/mule/
 http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
-
-    <flow name="jmsFlow" doc:name="jmsFlow" doc:description="Main flow - It recieves T24 messages from JMS Queue and send to solrFlow and dbFlow">
-        <inbound-endpoint ref="jmsEndPoint" doc:name="Generic"/>
-        <object-to-string-transformer doc:name="Object to String"/>
-        <logger message="Message recieved from JSM #[payload]" level="INFO" doc:name="Logger"/>
-        <all doc:name="All">
-            <vm:outbound-endpoint exchange-pattern="one-way" ref="SolrVM" doc:name="SolrVM"/>
-            <!-- <vm:outbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM"/> -->
-        </all>
+    
+    <flow name="solrFlow" doc:name="solrFlow" doc:description="Solr Flow - 
+		It recieves T24 Message from VM queue 
+		Transfroms to the solr input document 
+		Send the input document to the Solr for indexing">
+        <vm:inbound-endpoint exchange-pattern="one-way" ref="SolrVM" doc:name="SolrVM"/>
+         <choice doc:name="Choice">
+            <when expression="/Account" evaluator="xpath">
+                <mulexml:xslt-transformer maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="xsl/accounttosolradd.xsl" doc:name="Account XSLT"/>
+				<set-variable value="accountcore" variableName="solrCoreName" doc:name="Variable" />
+            </when>
+            <when expression="/Customer" evaluator="xpath">
+       			<mulexml:xslt-transformer maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="xsl/customertosolradd.xsl" outputEncoding="UTF-8" doc:name="Customer XSLT"/>
+				<set-variable value="customercore" variableName="solrCoreName" doc:name="Variable" />
+            </when>
+        </choice>
+        <logger message="Solr input document #[payload]" level="INFO" doc:name="Logger"/>
+        <http:outbound-endpoint ref="solrEPR" doc:name="HTTP" exchange-pattern="request-response" method="POST"/>
+        <logger message="Solr response #[payload]" level="INFO" doc:name="Logger"/>
     </flow>
     
+
 </mule>

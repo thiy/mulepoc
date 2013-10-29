@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="globalconfiguration">
+    <global-element name="Bean" type="http://www.springframework.org/schema/beans/bean" entity-id="Bean#1">
+        <properties>
+            <property name="factory-bean"/>
+            <property name="abstract"/>
+            <property name="scope"/>
+            <property name="init-method"/>
+            <property name="autowire-candidate"/>
+            <property name="factory-method"/>
+            <property name="class" value="org.hornetq.jms.client.HornetQJMSConnectionFactory"/>
+            <property name="parent"/>
+            <property name="children"/>
+            <property name="lazy-init"/>
+            <property name="auxiliary;wrappedIn" value="beans@spring@http://www.springframework.org/schema/beans"/>
+            <property name="id"/>
+            <property name="primary"/>
+            <property name="name" value="connectionFactory"/>
+            <property name="autowire"/>
+            <property name="destroy-method"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;wrapIn" value="1"/>
+            <property name="depends-on"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;0">
+                <property name="value" value="false"/>
+                <property name="auxiliary;index" value="3"/>
+                <property name="auxiliary;wrapIn" value="3"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;1">
+                <property name="auxiliary;index" value="4"/>
+                <property name="auxiliary;wrapIn" value="4"/>
+                <property-collection name="@http://www.springframework.org/schema/beans/bean;1">
+                    <property name="class" value="org.hornetq.api.core.TransportConfiguration"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="auxiliary;wrapIn" value="5"/>
+                    <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;2">
+                        <property name="auxiliary;index" value="7"/>
+                        <property name="auxiliary;wrapIn" value="7"/>
+                        <property-collection name="@http://www.springframework.org/schema/beans/map;1">
+                            <property name="key-type" value="java.lang.String"/>
+                            <property name="value-type" value="java.lang.Object"/>
+                            <property name="auxiliary;index" value="8"/>
+                            <property name="auxiliary;wrapIn" value="8"/>
+                            <property-collection name="@http://www.springframework.org/schema/beans/entry;1">
+<property name="value" value="5545"/>
+<property name="key" value="port"/>
+<property name="auxiliary;index" value="9"/>
+<property name="auxiliary;wrapIn" value="9"/>
+                            </property-collection>
+                        </property-collection>
+                    </property-collection>
+                    <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;1">
+                        <property name="value" value="org.hornetq.core.remoting.impl.netty.NettyConnectorFactory"/>
+                        <property name="auxiliary;index" value="6"/>
+                        <property name="auxiliary;wrapIn" value="6"/>
+                    </property-collection>
+                </property-collection>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element name="JMS" type="http://www.mulesoft.org/schema/mule/jms/connector" entity-id="JMS#1">
+        <properties>
+            <property name="jndiProviderUrl"/>
+            <property name="embeddedMode"/>
+            <property name="redeliveryHandlerFactory-ref"/>
+            <property name="connectionFactory-ref" value="connectionFactory"/>
+            <property name="maxRedelivery"/>
+            <property name="durable"/>
+            <property name="password" value="guest"/>
+            <property name="username" value="guest"/>
+            <property name="name" value="remote-jms-connector"/>
+            <property name="dynamicNotification"/>
+            <property name="noLocal"/>
+            <property name="auxiliary;index" value="10"/>
+            <property name="eagerConsumer"/>
+            <property name="numberOfConsumers" value="100"/>
+            <property name="acknowledgementMode"/>
+            <property name="jndiInitialFactory"/>
+            <property name="validateConnections"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="clientId"/>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="persistentDelivery"/>
+            <property name="forceJndiDestinations"/>
+            <property name="connectionFactoryJndiName"/>
+            <property name="specification" value="1.1"/>
+            <property name="jndiDestinations"/>
+            <property name="honorQosHeaders"/>
+            <property name="cacheJmsSessions"/>
+            <property name="jndiProviderProperties-ref"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/core/reconnect-forever;0">
+                <property name="blocking" value="false"/>
+                <property name="frequency" value="50000"/>
+                <property name="auxiliary;index" value="11"/>
+                <property name="auxiliary;wrapIn" value="11"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element name="JMS" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#2">
+        <properties>
+            <property name="topic"/>
+            <property name="queue" value="queue/requestQueue"/>
+            <property name="durableName"/>
+            <property name="businessEventsLabel"/>
+            <property name="disableTransportTransformer"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="exchange-pattern"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address"/>
+            <property name="name" value="jmsEndPoint"/>
+            <property name="encoding"/>
+            <property name="responseTransformer-refs"/>
+            <property name="auxiliary;index" value="12"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="connector-ref" value="remote-jms-connector"/>
+        </properties>
+    </global-element>
+    <global-element name="File" type="http://www.mulesoft.org/schema/mule/file/endpoint" entity-id="File#1">
+        <properties>
+            <property name="reverseOrder"/>
+            <property name="moveToPattern"/>
+            <property name="pollingFrequency"/>
+            <property name="businessEventsLabel"/>
+            <property name="comparator"/>
+            <property name="disableTransportTransformer"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="moveToDirectory"/>
+            <property name="address"/>
+            <property name="fileAge"/>
+            <property name="name" value="fileEndPoint"/>
+            <property name="encoding"/>
+            <property name="path" value="D:\T24filesource"/>
+            <property name="outputPattern"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="13"/>
+            <property name="responseTimeout" value="10000"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="Oracle Data Source" type="http://www.mulesoft.org/schema/mule/ee/jdbc/oracle-data-source" entity-id="Oracle Data Source#1">
+        <properties>
+            <property name="port"/>
+            <property name="host"/>
+            <property name="name" value="Oracle_Data_Source"/>
+            <property name="loginTimeout"/>
+            <property name="instance"/>
+            <property name="transactionIsolation" value="UNSPECIFIED"/>
+            <property name="password" value="t24"/>
+            <property name="user" value="t24"/>
+            <property name="url" value="jdbc:oracle:thin:@10.44.5.93:1522/JBDF2"/>
+            <property name="auxiliary;index" value="14"/>
+        </properties>
+    </global-element>
+    <global-element name="Database" type="http://www.mulesoft.org/schema/mule/ee/jdbc/connector" entity-id="Database#1">
+        <properties>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="transactionPerMessage"/>
+            <property name="resultSetHandler-ref"/>
+            <property name="dataSource-ref to Bean" value="Oracle_Data_Source"/>
+            <property name="pollingFrequency" value="0"/>
+            <property name="queryTimeout" value="-1"/>
+            <property name="name" value="Database"/>
+            <property name="validateConnections" value="true"/>
+            <property name="dynamicNotification"/>
+            <property name="queryRunner-ref"/>
+            <property name="auxiliary;index" value="15"/>
+            <property name="dataSource-ref to JDBC DataSource" value="Oracle_Data_Source"/>
+        </properties>
+    </global-element>
+    <global-element name="VM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
+        <properties>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address" value="vm://solrvm"/>
+            <property name="businessEventsLabel"/>
+            <property name="name" value="SolrVM"/>
+            <property name="encoding"/>
+            <property name="path"/>
+            <property name="responseTransformer-refs"/>
+            <property name="disableTransportTransformer"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="16"/>
+            <property name="exchange-pattern" value="one-way"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="VM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#2">
+        <properties>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address" value="vm://dbVM"/>
+            <property name="businessEventsLabel"/>
+            <property name="name" value="DBVM"/>
+            <property name="encoding"/>
+            <property name="path"/>
+            <property name="responseTransformer-refs"/>
+            <property name="disableTransportTransformer"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="17"/>
+            <property name="exchange-pattern" value="one-way"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="HTTP" type="http://www.mulesoft.org/schema/mule/http/endpoint" entity-id="HTTP#1">
+        <properties>
+            <property name="port" value="8983"/>
+            <property name="host" value="localhost"/>
+            <property name="businessEventsLabel"/>
+            <property name="followRedirects"/>
+            <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/http/endpoint"/>
+            <property name="keep-alive"/>
+            <property name="contentType" value="text/xml"/>
+            <property name="disableTransportTransformer"/>
+            <property name="password"/>
+            <property name="exchange-pattern" value="request-response"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="httpLabel"/>
+            <property name="address"/>
+            <property name="name" value="solrEPR"/>
+            <property name="encoding"/>
+            <property name="path" value="solr/#[flowVars['solrCoreName']]/update?commit=true"/>
+            <property name="responseTransformer-refs" value="objToStringTransformer"/>
+            <property name="method" value="POST"/>
+            <property name="user"/>
+            <property name="responseTimeout"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="18"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#1">
+        <properties>
+            <property name="returnClass"/>
+            <property name="ignoreBadInput"/>
+            <property name="encoding"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="19"/>
+        </properties>
+    </global-element>
+    <description></description>
+</mule-configuration>

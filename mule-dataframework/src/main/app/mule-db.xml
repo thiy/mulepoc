@@ -20,14 +20,12 @@ http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/fil
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
 
-    <flow name="jmsFlow" doc:name="jmsFlow" doc:description="Main flow - It recieves T24 messages from JMS Queue and send to solrFlow and dbFlow">
-        <inbound-endpoint ref="jmsEndPoint" doc:name="Generic"/>
-        <object-to-string-transformer doc:name="Object to String"/>
-        <logger message="Message recieved from JSM #[payload]" level="INFO" doc:name="Logger"/>
-        <all doc:name="All">
-            <vm:outbound-endpoint exchange-pattern="one-way" ref="SolrVM" doc:name="SolrVM"/>
-            <!-- <vm:outbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM"/> -->
-        </all>
-    </flow>
-    
+    <flow name="dbFlow" doc:name="dbFlow">
+        <vm:inbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM"/>
+		<jdbc-ee:outbound-endpoint exchange-pattern="one-way" queryTimeout="-1" connector-ref="Database" doc:name="Database" queryKey="addCustomer">
+            <jdbc-ee:query key="addCustomer" value="insert into customer_stage (id, shortname, name1, name2, mnemonic, address, postcode) values (#[message.payload[0]],#[message.payload[1]],#[message.payload[2]],#[message.payload[3]],#[message.payload[4]],#[message.payload[5]],#[message.payload[6]])"/>
+        </jdbc-ee:outbound-endpoint>    
+	</flow>
+
+
 </mule>
