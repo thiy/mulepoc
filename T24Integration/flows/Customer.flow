@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Flow>
+    <BaseEvent>CUSTOMER</BaseEvent>
+    <IsComponentService>false</IsComponentService>
+    <ExitPointType>VERSION</ExitPointType>
+    <InputFields>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>id</DisplayName>
+            <FieldName>@ID</FieldName>
+            <FieldType>decimal</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>shortName</DisplayName>
+            <FieldName>SHORT.NAME</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>name1</DisplayName>
+            <FieldName>NAME.1</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>name2</DisplayName>
+            <FieldName>NAME.2</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>mnemonic</DisplayName>
+            <FieldName>MNEMONIC</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>address</DisplayName>
+            <FieldName>ADDRESS</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>postCode</DisplayName>
+            <FieldName>POST.CODE</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>table</DisplayName>
+            <FieldName>"customer"</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+    </InputFields>
+    <flowName>CustomerFlow</flowName>
+</Flow>

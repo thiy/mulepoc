@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Event>
+    <eventName>AllCustomer</eventName>
+    <ExitPointType xsi:type="tsaService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ContractName>EB.ALL.CUSTOMER.SERVICE</ContractName>
+        <ExitPoint></ExitPoint>
+    </ExitPointType>
+    <FlowName>Customer</FlowName>
+    <Overrides/>
+</Event>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Flow>
+    <BaseEvent>ACCOUNT</BaseEvent>
+    <IsComponentService>false</IsComponentService>
+    <ExitPointType>VERSION</ExitPointType>
+    <InputFields>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>id</DisplayName>
+            <FieldName>@ID</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>mnemonic</DisplayName>
+            <FieldName>MNEMONIC</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>accountNumber</DisplayName>
+            <FieldName>ACCOUNT.NUMBER</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>categoryCode</DisplayName>
+            <FieldName>CATEGORY</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>category</DisplayName>
+            <FieldName>ACCOUNT&gt;CATEGORY&gt;CATEGORY&gt;DESCRIPTION</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>accountTitle1</DisplayName>
+            <FieldName>ACCOUNT.TITLE.1</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>accountTitle2</DisplayName>
+            <FieldName>ACCOUNT.TITLE.2</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>shortTitle</DisplayName>
+            <FieldName>SHORT.TITLE</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>customerNo</DisplayName>
+            <FieldName>CUSTOMER.NO</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>customerMnemonic</DisplayName>
+            <FieldName>CUSTOMER.MNEMONIC</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>currency</DisplayName>
+            <FieldName>CURRENCY</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>table</DisplayName>
+            <FieldName>"account"</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+    </InputFields>
+    <flowName>Account</flowName>
+</Flow>
