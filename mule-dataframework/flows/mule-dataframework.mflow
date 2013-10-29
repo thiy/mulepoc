@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-dataframework">
+    <global-element name="Bean" type="http://www.springframework.org/schema/beans/bean" entity-id="Bean#1">
+        <properties>
+            <property name="factory-bean"/>
+            <property name="abstract"/>
+            <property name="scope"/>
+            <property name="init-method"/>
+            <property name="autowire-candidate"/>
+            <property name="factory-method"/>
+            <property name="class" value="org.hornetq.jms.client.HornetQJMSConnectionFactory"/>
+            <property name="parent"/>
+            <property name="children"/>
+            <property name="lazy-init"/>
+            <property name="auxiliary;wrappedIn" value="beans@spring@http://www.springframework.org/schema/beans"/>
+            <property name="id"/>
+            <property name="primary"/>
+            <property name="name" value="connectionFactory"/>
+            <property name="autowire"/>
+            <property name="destroy-method"/>
+            <property name="auxiliary;index" value="2"/>
+            <property name="auxiliary;wrapIn" value="1"/>
+            <property name="depends-on"/>
+            <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;0">
+                <property name="value" value="false"/>
+                <property name="isProcessed$$$$" value="true"/>
+                <property name="auxiliary;index" value="3"/>
+                <property name="auxiliary;wrapIn" value="3"/>
+            </property-collection>
+            <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;1">
+                <property name="isProcessed$$$$" value="true"/>
+                <property name="auxiliary;index" value="4"/>
+                <property name="auxiliary;wrapIn" value="4"/>
+                <property-collection name="@http://www.springframework.org/schema/beans/bean;1">
+                    <property name="class" value="org.hornetq.api.core.TransportConfiguration"/>
+                    <property name="isProcessed$$$$" value="true"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="auxiliary;wrapIn" value="5"/>
+                    <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;1">
+                        <property name="value" value="org.hornetq.core.remoting.impl.netty.NettyConnectorFactory"/>
+                        <property name="isProcessed$$$$" value="true"/>
+                        <property name="auxiliary;index" value="6"/>
+                        <property name="auxiliary;wrapIn" value="6"/>
+                    </property-collection>
+                    <property-collection name="@http://www.springframework.org/schema/beans/constructor-arg;2">
+                        <property name="isProcessed$$$$" value="true"/>
+                        <property name="auxiliary;index" value="7"/>
+                        <property name="auxiliary;wrapIn" value="7"/>
+                        <property-collection name="@http://www.springframework.org/schema/beans/map;1">
+                            <property name="isProcessed$$$$" value="true"/>
+                            <property name="key-type" value="java.lang.String"/>
+                            <property name="value-type" value="java.lang.Object"/>
+                            <property name="auxiliary;index" value="8"/>
+                            <property name="auxiliary;wrapIn" value="8"/>
+                            <property-collection name="@http://www.springframework.org/schema/beans/entry;1">
+<property name="value" value="5545"/>
+<property name="isProcessed$$$$" value="true"/>
+<property name="key" value="port"/>
+<property name="auxiliary;index" value="9"/>
+<property name="auxiliary;wrapIn" value="9"/>
+                            </property-collection>
+                        </property-collection>
+                    </property-collection>
+                </property-collection>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element name="JMS" type="http://www.mulesoft.org/schema/mule/jms/connector" entity-id="JMS#1">
+        <properties>
+            <property name="jndiProviderUrl"/>
+            <property name="embeddedMode"/>
+            <property name="redeliveryHandlerFactory-ref"/>
+            <property name="connectionFactory-ref" value="connectionFactory"/>
+            <property name="maxRedelivery"/>
+            <property name="durable"/>
+            <property name="password" value="guest"/>
+            <property name="username" value="guest"/>
+            <property name="name" value="remote-jms-connector"/>
+            <property name="dynamicNotification"/>
+            <property name="noLocal"/>
+            <property name="auxiliary;index" value="10"/>
+            <property name="eagerConsumer"/>
+            <property name="numberOfConsumers" value="100"/>
+            <property name="acknowledgementMode"/>
+            <property name="jndiInitialFactory"/>
+            <property name="validateConnections"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="clientId"/>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="persistentDelivery"/>
+            <property name="forceJndiDestinations"/>
+            <property name="connectionFactoryJndiName"/>
+            <property name="specification" value="1.1"/>
+            <property name="jndiDestinations"/>
+            <property name="honorQosHeaders"/>
+            <property name="cacheJmsSessions"/>
+            <property name="jndiProviderProperties-ref"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/core/reconnect-forever;0">
+                <property name="blocking" value="false"/>
+                <property name="isProcessed$$$$" value="true"/>
+                <property name="frequency" value="50000"/>
+                <property name="auxiliary;index" value="11"/>
+                <property name="auxiliary;wrapIn" value="11"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <global-element name="JMS" type="http://www.mulesoft.org/schema/mule/jms/endpoint" entity-id="JMS#2">
+        <properties>
+            <property name="topic"/>
+            <property name="queue" value="queue/requestQueue"/>
+            <property name="durableName"/>
+            <property name="businessEventsLabel"/>
+            <property name="disableTransportTransformer"/>
+            <property name="disableTemporaryReplyToDestinations"/>
+            <property name="exchange-pattern"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address"/>
+            <property name="name" value="jmsEndPoint"/>
+            <property name="encoding"/>
+            <property name="responseTransformer-refs"/>
+            <property name="auxiliary;index" value="12"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="connector-ref" value="remote-jms-connector"/>
+        </properties>
+    </global-element>
+    <global-element name="File" type="http://www.mulesoft.org/schema/mule/file/endpoint" entity-id="File#1">
+        <properties>
+            <property name="reverseOrder"/>
+            <property name="moveToPattern"/>
+            <property name="pollingFrequency"/>
+            <property name="businessEventsLabel"/>
+            <property name="comparator"/>
+            <property name="disableTransportTransformer"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="moveToDirectory"/>
+            <property name="address"/>
+            <property name="fileAge"/>
+            <property name="name" value="fileEndPoint"/>
+            <property name="encoding"/>
+            <property name="path" value="D:\T24filesource"/>
+            <property name="outputPattern"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="13"/>
+            <property name="responseTimeout" value="10000"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="Oracle Data Source" type="http://www.mulesoft.org/schema/mule/ee/jdbc/oracle-data-source" entity-id="Oracle Data Source#1">
+        <properties>
+            <property name="port"/>
+            <property name="host"/>
+            <property name="name" value="Oracle_Data_Source"/>
+            <property name="loginTimeout"/>
+            <property name="instance"/>
+            <property name="transactionIsolation" value="UNSPECIFIED"/>
+            <property name="password" value="t24"/>
+            <property name="user" value="t24"/>
+            <property name="url" value="jdbc:oracle:thin:@10.44.5.93:1522/JBDF2"/>
+            <property name="auxiliary;index" value="14"/>
+        </properties>
+    </global-element>
+    <global-element name="Database" type="http://www.mulesoft.org/schema/mule/ee/jdbc/connector" entity-id="Database#1">
+        <properties>
+            <property name="dispatcherPoolFactory-ref"/>
+            <property name="transactionPerMessage"/>
+            <property name="resultSetHandler-ref"/>
+            <property name="dataSource-ref to Bean" value="Oracle_Data_Source"/>
+            <property name="pollingFrequency" value="0"/>
+            <property name="queryTimeout" value="-1"/>
+            <property name="name" value="Database"/>
+            <property name="validateConnections" value="true"/>
+            <property name="dynamicNotification"/>
+            <property name="queryRunner-ref"/>
+            <property name="auxiliary;index" value="15"/>
+            <property name="dataSource-ref to JDBC DataSource" value="Oracle_Data_Source"/>
+        </properties>
+    </global-element>
+    <global-element name="VM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
+        <properties>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address" value="vm://solrvm"/>
+            <property name="businessEventsLabel"/>
+            <property name="name" value="SolrVM"/>
+            <property name="encoding"/>
+            <property name="path"/>
+            <property name="responseTransformer-refs"/>
+            <property name="disableTransportTransformer"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="16"/>
+            <property name="exchange-pattern" value="one-way"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="VM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#2">
+        <properties>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="address" value="vm://dbVM"/>
+            <property name="businessEventsLabel"/>
+            <property name="name" value="DBVM"/>
+            <property name="encoding"/>
+            <property name="path"/>
+            <property name="responseTransformer-refs"/>
+            <property name="disableTransportTransformer"/>
+            <property name="mimeType"/>
+            <property name="responseTimeout"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="17"/>
+            <property name="exchange-pattern" value="one-way"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="HTTP" type="http://www.mulesoft.org/schema/mule/http/endpoint" entity-id="HTTP#1">
+        <properties>
+            <property name="port" value="8983"/>
+            <property name="host" value="localhost"/>
+            <property name="businessEventsLabel"/>
+            <property name="followRedirects"/>
+            <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/http/endpoint"/>
+            <property name="keep-alive"/>
+            <property name="contentType" value="text/xml"/>
+            <property name="disableTransportTransformer"/>
+            <property name="password"/>
+            <property name="exchange-pattern" value="request-response"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="ref"/>
+            <property name="transformer-refs"/>
+            <property name="httpLabel"/>
+            <property name="address"/>
+            <property name="name" value="solrEPR"/>
+            <property name="encoding"/>
+            <property name="path" value="solr/#[flowVars['solrCoreName']]/update?commit=true"/>
+            <property name="responseTransformer-refs" value="objToStringTransformer"/>
+            <property name="method" value="POST"/>
+            <property name="user"/>
+            <property name="responseTimeout"/>
+            <property name="mimeType"/>
+            <property name="auxiliary;index" value="18"/>
+            <property name="connector-ref"/>
+        </properties>
+    </global-element>
+    <global-element name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#1">
+        <properties>
+            <property name="auxiliary;erased;mimeType" value="true"/>
+            <property name="returnClass" value=""/>
+            <property name="ignoreBadInput" value="false"/>
+            <property name="updated"/>
+            <property name="auxiliary;erased;encoding" value="true"/>
+            <property name="name" value="objToStringTransformer"/>
+            <property name="encoding" value=""/>
+            <property name="auxiliary;index" value="19"/>
+            <property name="mimeType" value=""/>
+        </properties>
+        <description></description>
+    </global-element>
+    <global-element name="DataMapper" type="http://www.mulesoft.org/schema/mule/ee/data-mapper/config" entity-id="DataMapper#1">
+        <properties>
+            <property name="name" value="sam_grf"/>
+            <property name="auxiliary;index" value="20"/>
+            <property name="transformationGraphPath" value="sam.grf"/>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="jmsFlow" entity-id="e26b3ebf-a660-471f-b4c9-a6e12dd50567">
+        <properties>
+            <property name="processingStrategy"/>
+            <property name="processingStrategy2"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="21"/>
+        </properties>
+        <description>Main flow - It recieves T24 messages from JMS Queue and send to solrFlow and dbFlow</description>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
+            <graphicalData x="0" y="0" width="0" height="0"/>
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="Generic" type="http://www.mulesoft.org/schema/mule/core/endpoint" entity-id="Generic#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="ref" value="jmsEndPoint"/>
+                    <property name="transformer-refs"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="22"/>
+                    <property name="exchange-pattern"/>
+                    <property name="connector-ref"/>
+                </properties>
+            </endpoint>
+            <pattern name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="23"/>
+                </properties>
+            </pattern>
+            <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="message" value="Message recieved from JSM #[payload]"/>
+                    <property name="category"/>
+                    <property name="level" value="INFO"/>
+                    <property name="auxiliary;index" value="24"/>
+                </properties>
+            </pattern>
+            <splitter index="25" name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="bussinessEventsLabel"/>
+                    <property name=";INDEX" value="25"/>
+                    <property name="auxiliary;index" value="25"/>
+                    <property name="tracking:enable-default-events"/>
+                </properties>
+                <pattern name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#2">
+                    <properties>
+                        <property name="bussinessEventsLabel"/>
+                        <property name=";INDEX" value="25"/>
+                        <property name="auxiliary;index" value="25"/>
+                        <property name="tracking:enable-default-events"/>
+                    </properties>
+                </pattern>
+                <compartment entity-id="compartment#1">
+                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="865e5a65-0a5a-4767-b839-e1f826f07434">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="SolrVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#3">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="ref" value="SolrVM"/>
+<property name="transformer-refs"/>
+<property name="address"/>
+<property name="businessEventsLabel"/>
+<property name="encoding"/>
+<property name="path"/>
+<property name="responseTransformer-refs"/>
+<property name="disableTransportTransformer"/>
+<property name="mimeType"/>
+<property name="responseTimeout"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="26"/>
+<property name="exchange-pattern" value="one-way"/>
+<property name="connector-ref"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                </compartment>
+            </splitter>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="solrFlow" entity-id="fce21d83-b1cc-4fef-a60e-73f613aa6124">
+        <properties>
+            <property name="processingStrategy"/>
+            <property name="processingStrategy2"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="27"/>
+        </properties>
+        <description>Solr Flow - 
+		It recieves T24 Message from VM queue 
+		Transfroms to the solr input document 
+		Send the input document to the Solr for indexing</description>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#2">
+            <graphicalData x="0" y="0" width="0" height="0"/>
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="SolrVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#4">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="ref" value="SolrVM"/>
+                    <property name="transformer-refs"/>
+                    <property name="address"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="encoding"/>
+                    <property name="path"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="28"/>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="connector-ref"/>
+                </properties>
+            </endpoint>
+            <splitter index="29" name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name=";INDEX" value="29"/>
+                    <property-collection name="b8bb6601-89a5-4e87-ae9f-d1c65fe0e487">
+                        <property name="choice.expression" value="/Account"/>
+                        <property-collection name="choice.attributes">
+                            <property name="expression" value="/Account"/>
+                            <property name="evaluator" value="xpath"/>
+                        </property-collection>
+                    </property-collection>
+                    <property-collection name="45947731-f584-4b04-9051-500ed1c9c202">
+                        <property name="choice.expression" value="/Customer"/>
+                        <property-collection name="choice.attributes">
+                            <property name="expression" value="/Customer"/>
+                            <property name="evaluator" value="xpath"/>
+                        </property-collection>
+                    </property-collection>
+                </properties>
+                <pattern name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#2">
+                    <properties>
+                        <property name=";INDEX" value="29"/>
+                        <property-collection name="b8bb6601-89a5-4e87-ae9f-d1c65fe0e487">
+                            <property name="choice.expression" value="/Account"/>
+                            <property-collection name="choice.attributes">
+<property name="expression" value="/Account"/>
+<property name="evaluator" value="xpath"/>
+                            </property-collection>
+                        </property-collection>
+                        <property-collection name="45947731-f584-4b04-9051-500ed1c9c202">
+                            <property name="choice.expression" value="/Customer"/>
+                            <property-collection name="choice.attributes">
+<property name="expression" value="/Customer"/>
+<property name="evaluator" value="xpath"/>
+                            </property-collection>
+                        </property-collection>
+                    </properties>
+                </pattern>
+                <compartment entity-id="compartment#2">
+                    <lane hadOnlyOneElement="false" index="31" isChoiceOtherwiseLane="false" entity-id="b8bb6601-89a5-4e87-ae9f-d1c65fe0e487">
+                        <pattern name="Account XSLT" type="http://www.mulesoft.org/schema/mule/xml/xslt-transformer" entity-id="XSLT#1">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="returnClass"/>
+<property name="xsl-file" value="xsl/accounttosolradd.xsl"/>
+<property name="ignoreBadInput"/>
+<property name="maxActiveTransformers" value="5"/>
+<property name="encoding"/>
+<property name="transformerFactoryClass"/>
+<property name="outputEncoding"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="31"/>
+<property name="maxIdleTransformers" value="2"/>
+<property name="uriResolver-ref"/>
+                            </properties>
+                        </pattern>
+                        <pattern name="Variable" type="http://www.mulesoft.org/schema/mule/core/variable-transformer" entity-id="Variable#1">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="variableName" value="solrCoreName"/>
+<property name="value" value="accountcore"/>
+<property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-variable"/>
+<property name="auxiliary;index" value="32"/>
+                            </properties>
+                        </pattern>
+                    </lane>
+                    <lane hadOnlyOneElement="false" index="34" isChoiceOtherwiseLane="false" entity-id="45947731-f584-4b04-9051-500ed1c9c202">
+                        <pattern name="Customer XSLT" type="http://www.mulesoft.org/schema/mule/xml/xslt-transformer" entity-id="XSLT#2">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="returnClass"/>
+<property name="xsl-file" value="xsl/customertosolradd.xsl"/>
+<property name="ignoreBadInput"/>
+<property name="maxActiveTransformers" value="5"/>
+<property name="encoding"/>
+<property name="transformerFactoryClass"/>
+<property name="outputEncoding" value="UTF-8"/>
+<property name="mimeType"/>
+<property name="auxiliary;index" value="34"/>
+<property name="maxIdleTransformers" value="2"/>
+<property name="uriResolver-ref"/>
+                            </properties>
+                        </pattern>
+                        <pattern name="Variable" type="http://www.mulesoft.org/schema/mule/core/variable-transformer" entity-id="Variable#2">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="variableName" value="solrCoreName"/>
+<property name="value" value="customercore"/>
+<property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-variable"/>
+<property name="auxiliary;index" value="35"/>
+                            </properties>
+                        </pattern>
+                    </lane>
+                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="true" entity-id="9a4a9527-80a5-4ecf-9b2b-ad6389f80c51"/>
+                </compartment>
+            </splitter>
+            <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="message" value="Solr input document #[payload]"/>
+                    <property name="category"/>
+                    <property name="level" value="INFO"/>
+                    <property name="auxiliary;index" value="36"/>
+                </properties>
+            </pattern>
+            <endpoint direction="Outbound" message-exchange-pattern="RequestResponse" name="HTTP" type="http://www.mulesoft.org/schema/mule/http/endpoint" entity-id="HTTP#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="port"/>
+                    <property name="host"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="followRedirects"/>
+                    <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/http/endpoint"/>
+                    <property name="keep-alive"/>
+                    <property name="contentType"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="password"/>
+                    <property name="exchange-pattern" value="request-response"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="ref" value="solrEPR"/>
+                    <property name="transformer-refs"/>
+                    <property name="httpLabel"/>
+                    <property name="address"/>
+                    <property name="path"/>
+                    <property name="encoding"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="method" value="POST"/>
+                    <property name="user"/>
+                    <property name="responseTimeout"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="37"/>
+                    <property name="connector-ref"/>
+                </properties>
+            </endpoint>
+            <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#3">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="message" value="Solr response #[payload]"/>
+                    <property name="category"/>
+                    <property name="level" value="INFO"/>
+                    <property name="auxiliary;index" value="38"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+    <flow SubFlow="false" name="dbFlow" entity-id="928ea452-bebd-47ad-988a-a2a7cf54d425">
+        <properties>
+            <property name="processingStrategy"/>
+            <property name="processingStrategy2"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="39"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#3">
+            <graphicalData x="0" y="0" width="0" height="0"/>
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="DBVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#5">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="ref" value="DBVM"/>
+                    <property name="transformer-refs"/>
+                    <property name="address"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="encoding"/>
+                    <property name="path"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="responseTimeout"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="auxiliary;index" value="40"/>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="connector-ref"/>
+                </properties>
+            </endpoint>
+            <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="Database" type="http://www.mulesoft.org/schema/mule/ee/jdbc/endpoint" entity-id="Database#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name=""/>
+                    <property name="pollingFrequency"/>
+                    <property name="businessEventsLabel"/>
+                    <property name="queryTimeout" value="-1"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="exchange-pattern" value="one-way"/>
+                    <property name="queryKey" value="addCustomer"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="address"/>
+                    <property name="encoding"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="41"/>
+                    <property name="responseTimeout"/>
+                    <property name="mimeType"/>
+                    <property name="connector-ref" value="Database"/>
+                    <property-collection name="@http://www.mulesoft.org/schema/mule/ee/jdbc/query;0">
+                        <property name="value" value="insert into customer_stage (id, shortname, name1, name2, mnemonic, address, postcode) values (#[message.payload[0]],#[message.payload[1]],#[message.payload[2]],#[message.payload[3]],#[message.payload[4]],#[message.payload[5]],#[message.payload[6]])"/>
+                        <property name="isProcessed$$$$" value="true"/>
+                        <property name="key" value="addCustomer"/>
+                        <property name="auxiliary;index" value="42"/>
+                        <property name="auxiliary;wrapIn" value="42"/>
+                    </property-collection>
+                </properties>
+            </endpoint>
+        </lane>
+    </flow>
+    <description></description>
+</mule-configuration>

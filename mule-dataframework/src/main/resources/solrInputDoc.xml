@@ -1,0 +1,10 @@
+<add>
+<doc>
+<field name="id">10000001</field>
+<field name="name">test bank</field>
+<field name="name">test bank</field>
+<field name="mnemonic">BKTESTUK</field>
+<field name="address">TEST STREET</field>
+<field name="postcode"/>
+</doc>
+</add>

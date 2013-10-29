@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="tselvaraj" created="Wed Oct 23 13:50:34 BST 2013" guiVersion="3.3.2" id="1382973916105" licenseCode="CLPXDMULES37812333BY" licenseType="Commercial" modified="Wed Oct 23 13:50:34 BST 2013" modifiedBy="tselvaraj" name="sam_grf" preview-file="${Project_Home}/src/test/resources/account.xml" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account" _dataStructure="OBJECT" _id="__id" _type="Input" id="84542f29-8e84-4184-a0b8-012e37d14f8e">
+<Record fieldDelimiter="|" name="Account" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/Common/EventCommon=ns1,http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:eventCommon/ns1:application" containerType="SINGLE" label="application" name="application" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/Common/EventCommon=ns1,http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:eventCommon/ns1:companyId" containerType="SINGLE" label="companyId" name="companyId" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/Common/EventCommon=ns1,http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:eventCommon/ns1:operator" containerType="SINGLE" label="operator" name="operator" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/Common/EventCommon=ns1,http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:eventCommon/ns1:today" containerType="SINGLE" label="today" name="today" type="date"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/Common/EventCommon=ns1,http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:eventCommon/ns1:transactionStage" containerType="SINGLE" label="transactionStage" name="transactionStage" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:id" containerType="SINGLE" label="id" name="id" type="integer"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:mnemonic" containerType="SINGLE" label="mnemonic" name="mnemonic" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:accountNumber" containerType="SINGLE" label="accountNumber" name="accountNumber" type="integer"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:category" containerType="SINGLE" label="category" name="category" type="integer"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:accountTitle1" containerType="SINGLE" label="accountTitle1" name="accountTitle1" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:accountTitle2" containerType="SINGLE" label="accountTitle2" name="accountTitle2" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:shortTitle" containerType="SINGLE" label="shortTitle" name="shortTitle" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:customerNo" containerType="SINGLE" label="customerNo" name="customerNo" type="integer"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:currency" containerType="SINGLE" label="currency" name="currency" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Account=ns0}/ns0:Account/ns0:table" containerType="SINGLE" label="table" name="table" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/add" _dataStructure="OBJECT" _id="__id" _type="Output" id="4539b239-76b6-497a-a660-793d7784bb24">
+<Record fieldDelimiter="|" name="add" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/add/doc/field" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="4539b239-76b6-497a-a660-793d7784bb24" _parent_id="__parent_id" _type="Output" id="dbdd8b4a-d3f5-41af-825d-57212db4a9f9">
+<Record fieldDelimiter="|" name="field" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/add/doc/field/@name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __sourcePath="{}/add/doc/field/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/add/doc/field/field" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="6fc1ddac-6e1b-47ed-a930-6a27a8913110" _parent_id="__parent_id" _type="Output" id="1a40f486-a1d3-42cc-9a3e-29d0627f62c0">
+<Record fieldDelimiter="|" name="field" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/add/doc/field/field" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="6fc1ddac-6e1b-47ed-a930-6a27a8913110" _parent_id="__parent_id" _type="Output" id="c0f6107c-9349-4549-8a28-c875e10839ed">
+<Record fieldDelimiter="|" name="field" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/add/doc/field" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="dbdd8b4a-d3f5-41af-825d-57212db4a9f9" _parent_id="__parent_id" _type="Output" id="51acf100-2f8d-4eb9-a1ae-6e540a9ee7bb">
+<Record fieldDelimiter="|" name="field" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/add/doc/field/@name" containerType="SINGLE" label="name" name="name" type="string"/>
+<Field __sourcePath="{}/add/doc/field/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:outputPayload" guiHeight="0" guiName="XML WRITER" guiWidth="0" guiX="900" guiY="20" id="EXT_XML_WRITER0" type="EXT_XML_WRITER" xmlSchemaURL=".\src\test\resources\add.xsd">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<add xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="0">
+  <doc>
+    <field name="$1.name" clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">$1.text</field>
+    <field name="$2.name" clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">$2.text</field>
+  </doc>
+</add>]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[add]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Account' -&gt; 'add'" guiWidth="0" guiX="460" guiY="20" id="REFORMAT0" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Account' -&gt; 'field'" guiWidth="0" guiX="460" guiY="120" id="REFORMAT1" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.text = (isnull(input.id) ? null : num2str(input.id));
+output.name = "id";]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Account' -&gt; 'field'" guiWidth="0" guiX="460" guiY="220" id="REFORMAT2" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.text = input.mnemonic;
+output.name = "mnemonic";]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiHeight="0" guiName="XML READER" guiWidth="0" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="xmlSchemaURL"><![CDATA[.\src\test\resources\application.xsd,C:\Users\tselvaraj\MuleStudio\workspace\mule-dataframework\src\test\resources\Account.xsd]]></attr>
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context xpath=".">
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" outPort="2" sequenceField="__id" xpath="/ns0:Account">
+    <Mapping cloverField="application" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:application"/>
+    <Mapping cloverField="companyId" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:companyId"/>
+    <Mapping cloverField="operator" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:operator"/>
+    <Mapping cloverField="today" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:today"/>
+    <Mapping cloverField="transactionStage" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:transactionStage"/>
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="accountNumber" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountNumber"/>
+    <Mapping cloverField="category" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:category"/>
+    <Mapping cloverField="accountTitle1" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle1"/>
+    <Mapping cloverField="accountTitle2" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle2"/>
+    <Mapping cloverField="shortTitle" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:shortTitle"/>
+    <Mapping cloverField="customerNo" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:customerNo"/>
+    <Mapping cloverField="currency" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:currency"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" outPort="0" sequenceField="__id" xpath="/ns0:Account">
+    <Mapping cloverField="application" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:application"/>
+    <Mapping cloverField="companyId" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:companyId"/>
+    <Mapping cloverField="operator" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:operator"/>
+    <Mapping cloverField="today" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:today"/>
+    <Mapping cloverField="transactionStage" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:transactionStage"/>
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="accountNumber" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountNumber"/>
+    <Mapping cloverField="category" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:category"/>
+    <Mapping cloverField="accountTitle1" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle1"/>
+    <Mapping cloverField="accountTitle2" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle2"/>
+    <Mapping cloverField="shortTitle" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:shortTitle"/>
+    <Mapping cloverField="customerNo" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:customerNo"/>
+    <Mapping cloverField="currency" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:currency"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" outPort="1" sequenceField="__id" xpath="/ns0:Account">
+    <Mapping cloverField="application" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:application"/>
+    <Mapping cloverField="companyId" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:companyId"/>
+    <Mapping cloverField="operator" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:operator"/>
+    <Mapping cloverField="today" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:today"/>
+    <Mapping cloverField="transactionStage" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;;ns1=&quot;http://www.temenos.com/T24/event/Common/EventCommon&quot;" trim="true" xpath="ns0:eventCommon/ns1:transactionStage"/>
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="accountNumber" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountNumber"/>
+    <Mapping cloverField="category" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:category"/>
+    <Mapping cloverField="accountTitle1" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle1"/>
+    <Mapping cloverField="accountTitle2" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:accountTitle2"/>
+    <Mapping cloverField="shortTitle" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:shortTitle"/>
+    <Mapping cloverField="customerNo" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:customerNo"/>
+    <Mapping cloverField="currency" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:currency"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Account&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[{http://www.temenos.com/T24/event/T24Integration/Account}Account]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="REFORMAT0:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="4539b239-76b6-497a-a660-793d7784bb24" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:0"/>
+<Edge debugMode="true" fromNode="REFORMAT1:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="dbdd8b4a-d3f5-41af-825d-57212db4a9f9" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:1"/>
+<Edge debugMode="true" fromNode="REFORMAT2:0" guiBendpoints="" id="Edge5" inPort="Port 2 (in)" metadata="51acf100-2f8d-4eb9-a1ae-6e540a9ee7bb" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:2"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="84542f29-8e84-4184-a0b8-012e37d14f8e" outPort="Port 0 (out)" toNode="REFORMAT0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="84542f29-8e84-4184-a0b8-012e37d14f8e" outPort="Port 1 (out)" toNode="REFORMAT1:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:2" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="84542f29-8e84-4184-a0b8-012e37d14f8e" outPort="Port 2 (out)" toNode="REFORMAT2:0"/>
+</Phase>
+</Graph>

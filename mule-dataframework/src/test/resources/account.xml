@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Account xmlns="http://www.temenos.com/T24/event/T24Integration/Account"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.temenos.com/T24/event/T24Integration/Account T24Integration-Account.xsd"
+	xmlns:ns0="http://www.temenos.com/T24/event/Common/EventCommon">
+	<eventCommon>
+		<ns0:application>EB.ALL.ACCOUNT.SERVICE</ns0:application>
+		<ns0:companyId>GB0010001</ns0:companyId>
+		<ns0:operator>INPUTTER</ns0:operator>
+		<ns0:today>2013-03-22</ns0:today>
+		<ns0:transactionStage>JOB-PROCESS</ns0:transactionStage>
+	</eventCommon>
+	<id>62235</id>
+	<accountNumber>62235</accountNumber>
+	<categoryCode>1001</categoryCode>
+	<accountTitle1>Current Account</accountTitle1>
+	<shortTitle>John Kites</shortTitle>
+	<customerNo>120132</customerNo>
+	<currency>USD</currency>
+	<table>account</table>
+	<categoryList>
+		<category language="GB">Current Account</category>
+		<category language="FR">Comptes courants</category>
+	</categoryList>
+</Account>	

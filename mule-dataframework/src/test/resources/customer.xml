@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Customer xmlns="http://www.temenos.com/T24/event/T24Integration/Customer"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.temenos.com/T24/event/T24Integration/Customer T24Integration-Customer.xsd"
+	xmlns:ns0="http://www.temenos.com/T24/event/Common/EventCommon">
+	<eventCommon>
+		<ns0:application>CUSTOMER</ns0:application>
+		<ns0:companyId>GB0010001</ns0:companyId>
+		<ns0:operator>SSOUSER.1</ns0:operator>
+		<ns0:today>2013-03-22</ns0:today>
+		<ns0:transactionStage>INPUT</ns0:transactionStage>
+	</eventCommon>
+	<id>111426</id>
+	<shortNameList>
+		<shortName language="GB">TEST11</shortName>
+	</shortNameList>
+	<name1List>
+		<name1 language="GB">TEST11</name1>
+	</name1List>
+	<name2List>
+		<name2 language="GB">TEST11</name2>
+	</name2List>
+	<mnemonic>TEST11</mnemonic>
+	<addressList>
+		<address language="GB" index="1">TEST11</address>
+	</addressList>
+	<postCodeList>
+		<postCode language="GB">TEST11</postCode>
+	</postCodeList>
+	<table>customer</table>
+</Customer>

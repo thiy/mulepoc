@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.temenos.com/T24/event/T24Integration/Account" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Account" type="acc:AccountType" xmlns:acc="http://www.temenos.com/T24/event/T24Integration/Account"/>
+  <xs:complexType name="eventCommonType">
+    <xs:sequence>
+      <xs:element ref="even:application" xmlns:even="http://www.temenos.com/T24/event/Common/EventCommon"/>
+      <xs:element ref="even:companyId" xmlns:even="http://www.temenos.com/T24/event/Common/EventCommon"/>
+      <xs:element ref="even:operator" xmlns:even="http://www.temenos.com/T24/event/Common/EventCommon"/>
+      <xs:element ref="even:today" xmlns:even="http://www.temenos.com/T24/event/Common/EventCommon"/>
+      <xs:element ref="even:transactionStage" xmlns:even="http://www.temenos.com/T24/event/Common/EventCommon"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccountType">
+    <xs:sequence>
+      <xs:element type="acc:eventCommonType" name="eventCommon" xmlns:acc="http://www.temenos.com/T24/event/T24Integration/Account"/>
+      <xs:element type="xs:int" name="id"/>
+      <xs:element type="xs:string" name="mnemonic"/>
+      <xs:element type="xs:int" name="accountNumber"/>
+      <xs:element type="xs:short" name="category"/>
+      <xs:element type="xs:string" name="accountTitle1"/>
+      <xs:element type="xs:string" name="accountTitle2"/>
+      <xs:element type="xs:string" name="shortTitle"/>
+      <xs:element type="xs:int" name="customerNo"/>
+      <xs:element type="xs:string" name="currency"/>
+      <xs:element type="xs:string" name="table"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
