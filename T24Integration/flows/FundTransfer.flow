@@ -1,6 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Flow>
-<InputFields></InputFields>
-<BaseEvent></BaseEvent>
-<ExitPointType>VERSION</ExitPointType>
+    <BaseEvent>FUNDS.TRANSFER</BaseEvent>
+    <IsComponentService>false</IsComponentService>
+    <ExitPointType>VERSION</ExitPointType>
+    <InputFields>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>id</DisplayName>
+            <FieldName>@ID</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>transactionType</DisplayName>
+            <FieldName>TRANSACTION.TYPE</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>debitAcctNo</DisplayName>
+            <FieldName>DEBIT.ACCT.NO</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>currencyMktDr</DisplayName>
+            <FieldName>CURRENCY.MKT.DR</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>debitCurrency</DisplayName>
+            <FieldName>DEBIT.CURRENCY</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>debitValueDate</DisplayName>
+            <FieldName>DEBIT.VALUE.DATE</FieldName>
+            <FieldType>date</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditAcctNo</DisplayName>
+            <FieldName>CREDIT.ACCT.NO</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditCurrency</DisplayName>
+            <FieldName>CREDIT.CURRENCY</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditAmount</DisplayName>
+            <FieldName>CREDIT.AMOUNT</FieldName>
+            <FieldType>decimal</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditValueDate</DisplayName>
+            <FieldName>CREDIT.VALUE.DATE</FieldName>
+            <FieldType>date</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>processingDate</DisplayName>
+            <FieldName>PROCESSING.DATE</FieldName>
+            <FieldType>date</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>debitCustomer</DisplayName>
+            <FieldName>DEBIT.CUSTOMER</FieldName>
+            <FieldType>decimal</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>debitCustName</DisplayName>
+            <FieldName>DEBIT.CUST.NAME</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditCustomer</DisplayName>
+            <FieldName>CREDIT.CUSTOMER</FieldName>
+            <FieldType>decimal</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>creditCustName</DisplayName>
+            <FieldName>CREDIT.CUST.NAME</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+        <Field xsi:type="applicationVersionField" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <DisplayName>stmtNos</DisplayName>
+            <FieldName>STMT.NOS</FieldName>
+            <FieldType>string</FieldType>
+            <selected>true</selected>
+        </Field>
+    </InputFields>
+    <flowName>FundTransfer</flowName>
 </Flow>
