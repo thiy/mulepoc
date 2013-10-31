@@ -21,12 +21,11 @@ http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schem
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
 
     <flow name="jmsFlow" doc:name="jmsFlow" doc:description="Main flow - It recieves T24 messages from JMS Queue and send to solrFlow and dbFlow">
-        <inbound-endpoint ref="jmsEndPoint" doc:name="Generic"/>
-        <object-to-string-transformer doc:name="Object to String"/>
+        <inbound-endpoint ref="jmsEndPoint" doc:name="Generic" transformer-refs="objToStringTransformer"/>
         <logger message="Message recieved from JSM #[payload]" level="INFO" doc:name="Logger"/>
         <all doc:name="All">
             <vm:outbound-endpoint exchange-pattern="one-way" ref="SolrVM" doc:name="SolrVM"/>
-            <!-- <vm:outbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM"/> -->
+            <vm:outbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM"/>
         </all>
     </flow>
     

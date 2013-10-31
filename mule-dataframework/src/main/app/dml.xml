@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jdbc-ee="http://www.mulesoft.org/schema/mule/ee/jdbc"
+	xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" version="EE-3.4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/ee/jdbc http://www.mulesoft.org/schema/mule/ee/jdbc/current/mule-jdbc-ee.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+    <flow name="dmlFlow1" doc:name="dmlFlow1">
+        <file:inbound-endpoint path="D:\To_Delete\source\add" responseTimeout="10000" doc:name="File" transformer-refs="objToStringTransformer"/>
+        <custom-transformer class="com.temenos.dataframework.transformer.T24XmlToDBXml" doc:name="Java"/>
+        <collection-splitter doc:name="Collection Splitter"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+        <set-variable variableName="query" value="#[message.payload]" doc:name="Variable" />
+        <outbound-endpoint address="jdbc://#[flowVars['query']]" exchange-pattern="request-response" doc:name="Generic" connector-ref="Database"/>
+    </flow>
+</mule>

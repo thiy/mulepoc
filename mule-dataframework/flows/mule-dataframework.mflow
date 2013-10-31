@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-dataframework">
-    <flow SubFlow="false" name="jmsFlow" entity-id="8744f1e2-1e55-4e0c-80ab-3d3215bda5c9">
+    <flow SubFlow="false" name="jmsFlow" entity-id="30bc68ca-ec38-4d29-8457-73e749b3f5c4">
         <properties>
             <property name="processingStrategy"/>
             <property name="processingStrategy2"/>
@@ -15,7 +15,7 @@
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
                     <property name="ref" value="jmsEndPoint"/>
-                    <property name="transformer-refs"/>
+                    <property name="transformer-refs" value="objToStringTransformer"/>
                     <property name="businessEventsLabel"/>
                     <property name="address"/>
                     <property name="encoding"/>
@@ -29,39 +29,50 @@
                     <property name="connector-ref"/>
                 </properties>
             </endpoint>
-            <pattern name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#1">
-                <graphicalData x="0" y="0" width="0" height="0"/>
-                <properties>
-                    <property name="returnClass"/>
-                    <property name="ignoreBadInput"/>
-                    <property name="encoding"/>
-                    <property name="mimeType"/>
-                    <property name="auxiliary;index" value="3"/>
-                </properties>
-            </pattern>
             <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
                     <property name="message" value="Message recieved from JSM #[payload]"/>
                     <property name="category"/>
                     <property name="level" value="INFO"/>
-                    <property name="auxiliary;index" value="4"/>
+                    <property name="auxiliary;index" value="3"/>
                 </properties>
             </pattern>
-            <splitter index="5" name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#1">
+            <splitter index="4" name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
                     <property name="bussinessEventsLabel"/>
-                    <property name="auxiliary;index" value="5"/>
+                    <property name="auxiliary;index" value="4"/>
                     <property name="tracking:enable-default-events"/>
                 </properties>
                 <pattern name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#2"/>
                 <compartment entity-id="compartment#1">
-                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="f2ae2e45-8641-4a2b-be50-f434ba5790f9">
+                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="ceeb436f-3d07-4c7d-b6ff-03dcb0a0bb83">
                         <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="SolrVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
                             <graphicalData x="0" y="0" width="0" height="0"/>
                             <properties>
 <property name="ref" value="SolrVM"/>
+<property name="transformer-refs"/>
+<property name="address"/>
+<property name="businessEventsLabel"/>
+<property name="encoding"/>
+<property name="path"/>
+<property name="responseTransformer-refs"/>
+<property name="disableTransportTransformer"/>
+<property name="mimeType"/>
+<property name="responseTimeout"/>
+<property name="tracking:enable-default-events"/>
+<property name="auxiliary;index" value="5"/>
+<property name="exchange-pattern" value="one-way"/>
+<property name="connector-ref"/>
+                            </properties>
+                        </endpoint>
+                    </lane>
+                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="634cd9cf-4d96-4185-a9fe-4a11883916ba">
+                        <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="DBVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#2">
+                            <graphicalData x="0" y="0" width="0" height="0"/>
+                            <properties>
+<property name="ref" value="DBVM"/>
 <property name="transformer-refs"/>
 <property name="address"/>
 <property name="businessEventsLabel"/>

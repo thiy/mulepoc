@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FundTransfer
+	xmlns="http://www.temenos.com/T24/event/T24Integration/FundTransfer"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.temenos.com/T24/event/T24Integration/FundTransfer T24Integration-FundTransfer.xsd"
+	xmlns:ns0="http://www.temenos.com/T24/event/Common/EventCommon">
+	<eventCommon>
+		<ns0:application>FUNDS.TRANSFER</ns0:application>
+		<ns0:companyId>GB0010001</ns0:companyId>
+		<ns0:operator>SSOUSER.2</ns0:operator>
+		<ns0:today>2013-03-22</ns0:today>
+		<ns0:transactionStage>INPUT-AUTHORISE</ns0:transactionStage>
+	</eventCommon>
+	<id>FT13081VPQ32</id>
+	<transactionType>AC</transactionType>
+	<debitAcctNo>21067</debitAcctNo>
+	<currencyMktDr>1</currencyMktDr>
+	<debitCurrency>USD</debitCurrency>
+	<debitValueDate>2013-03-22</debitValueDate>
+	<creditAcctNo>65118</creditAcctNo>
+	<creditCurrency>USD</creditCurrency>
+	<creditValueDate>2013-03-22</creditValueDate>
+	<processingDate>2013-03-22</processingDate>
+	<debitCustomer>100301</debitCustomer>
+	<creditCustomer>123123</creditCustomer>
+	<stmtNosList>
+		<stmtNos index="1">167391846751547.00</stmtNos>
+		<stmtNos index="2">1-2</stmtNos>
+	</stmtNosList>
+</FundTransfer>

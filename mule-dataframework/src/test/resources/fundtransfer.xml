@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FundTransfer
+	xmlns="http://www.temenos.com/T24/event/T24UniversalSearchEvents/FundTransfer"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.temenos.com/T24/event/T24UniversalSearchEvents/FundTransfer T24UniversalSearchEvents-FundTransfer.xsd"
+	xmlns:ns0="http://www.temenos.com/T24/event/Common/EventCommon">
+	<eventCommon>
+		<ns0:application>FUNDS.TRANSFER</ns0:application>
+		<ns0:companyId>GB0010001</ns0:companyId>
+		<ns0:operator>SSOUSER.1</ns0:operator>
+		<ns0:today>2013-03-22</ns0:today>
+		<ns0:transactionStage>INPUT</ns0:transactionStage>
+	</eventCommon>
+	<id>FT13081VPQ32</id>
+	<amountCredited>USD100.00</amountCredited>
+	<amountDebited>USD100.00</amountDebited>
+	<chargeCode>WAIVE</chargeCode>
+	<chargeComDisplay>NO</chargeComDisplay>
+	<chargedCustomer>100336</chargedCustomer>
+	<commissionCode>WAIVE</commissionCode>
+	<crAdviceReqdYN>N</crAdviceReqdYN>
+	<credCusAddressList>
+		<credCusAddress index="1">GB:1=Suite 2200</credCusAddress>
+	</credCusAddressList>
+	<credCusCountryList>
+		<credCusCountry index="1">GB=United States of America</credCusCountry>
+	</credCusCountryList>
+	<credCusName1List>
+		<credCusName1 index="1">GB=STUART BROAD</credCusName1>
+	</credCusName1List>
+	<credCusName2List>
+		<credCusName2 index="1">GB=STUART BROAD</credCusName2>
+	</credCusName2List>
+	<credCusPosCodeList>
+		<credCusPosCode index="1">GB=98104-1049</credCusPosCode>
+	</credCusPosCodeList>
+	<credCusStreetList>
+		<credCusStreet index="1">GB=1000 - 2nd Ave</credCusStreet>
+	</credCusStreetList>
+	<credCusTownConList>
+		<credCusTownCon index="1">GB=Seattle</credCusTownCon>
+	</credCusTownConList>
+	<creditAcctName>STUART BROAD</creditAcctName>
+	<creditAcctNo>65118</creditAcctNo>
+	<creditCompCode>GB0010001</creditCompCode>
+	<creditCurrency>USD</creditCurrency>
+	<creditCustomer>123123</creditCustomer>
+	<creditValueDate>2013-03-22</creditValueDate>
+	<currencyMktCr>1</currencyMktCr>
+	<currencyMktDr>1</currencyMktDr>
+	<custGroupLevel>99</custGroupLevel>
+	<debitAcctName>ALLEGRA</debitAcctName>
+	<debitAcctNo>21067</debitAcctNo>
+	<debitAmount>100.00</debitAmount>
+	<debitCompCode>GB0010001</debitCompCode>
+	<debitCurrency>USD</debitCurrency>
+	<debitCusName1List>
+		<debitCusName1 index="1">GB=Allegra</debitCusName1>
+	</debitCusName1List>
+	<debitCustStreetList>
+		<debitCustStreet index="1">GB=1 MADISON AVENUE</debitCustStreet>
+	</debitCustStreetList>
+	<debitCustomer>100301</debitCustomer>
+	<debitValueDate>2013-03-22</debitValueDate>
+	<debtCusTownConList>
+		<debtCusTownCon index="1">GB=NEW YORK</debtCusTownCon>
+	</debtCusTownConList>
+	<drAdviceReqdYN>N</drAdviceReqdYN>
+	<fedFunds>NO</fedFunds>
+	<ft1>AC</ft1>
+	<ibanCredit>GB65NWBK60163100040037</ibanCredit>
+	<ibanDebit>GB95NWBK60163100021067</ibanDebit>
+	<locAmtCredited>100.00</locAmtCredited>
+	<locAmtDebited>100.00</locAmtDebited>
+	<overrideList>
+		<override index="1">CHARGED.CUSTOMER</override>
+	</overrideList>
+	<positionType>TR</positionType>
+	<processingDate>2013-03-22</processingDate>
+	<profitCentreCust>100301</profitCentreCust>
+	<rateFixing>NO</rateFixing>
+	<refNo>FT13081VPQ32</refNo>
+	<returnToDept>NO</returnToDept>
+	<stmtNosList>
+		<stmtNos index="1">VAL</stmtNos>
+	</stmtNosList>
+	<totRecChg>0</totRecChg>
+	<totRecChgCrccy>0</totRecChgCrccy>
+	<totRecChgLcl>0</totRecChgLcl>
+	<totRecComm>0</totRecComm>
+	<totRecCommLcl>0</totRecCommLcl>
+	<totSndChgCrccy>0.00</totSndChgCrccy>
+	<transactionType>AC</transactionType>
+</FundTransfer>

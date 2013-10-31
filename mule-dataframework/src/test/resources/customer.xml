@@ -13,6 +13,7 @@
 	<id>111426</id>
 	<shortNameList>
 		<shortName language="GB">TEST11</shortName>
+		<shortName language="FR">TEST11</shortName>
 	</shortNameList>
 	<name1List>
 		<name1 language="GB">TEST11</name1>
