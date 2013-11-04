@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-db">
-    <flow SubFlow="false" name="dbFlow" entity-id="e57a93b1-c98c-4c7c-a6ba-794a8375804c">
+    <flow SubFlow="false" name="dbFlow" entity-id="19ce8f73-e753-4f06-8163-21b986f41993">
         <properties>
             <property name="processingStrategy"/>
             <property name="processingStrategy2"/>
@@ -38,65 +38,6 @@
                     <property name="auxiliary;index" value="3"/>
                 </properties>
             </pattern>
-            <splitter index="4" name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#1">
-                <graphicalData x="0" y="0" width="0" height="0"/>
-                <properties>
-                    <property-collection name="f0525347-7b01-489e-9b1d-66fccac076a2">
-                        <property name="choice.expression" value="/Customer"/>
-                        <property-collection name="choice.attributes">
-                            <property name="expression" value="/Customer"/>
-                            <property name="evaluator" value="xpath"/>
-                        </property-collection>
-                    </property-collection>
-                    <property-collection name="a2cd46b8-7607-4d63-a957-5c670c8cd4eb">
-                        <property name="choice.expression" value="/Account"/>
-                        <property-collection name="choice.attributes">
-                            <property name="expression" value="/Account"/>
-                            <property name="evaluator" value="xpath"/>
-                        </property-collection>
-                    </property-collection>
-                </properties>
-                <pattern name="Choice" type="org.mule.tooling.ui.modules.core.pattern.cbr" entity-id="Choice#2"/>
-                <compartment entity-id="compartment#1">
-                    <lane hadOnlyOneElement="false" index="6" isChoiceOtherwiseLane="false" entity-id="a2cd46b8-7607-4d63-a957-5c670c8cd4eb">
-                        <pattern name="Account XSLT" type="http://www.mulesoft.org/schema/mule/xml/xslt-transformer" entity-id="XSLT#1">
-                            <graphicalData x="0" y="0" width="0" height="0"/>
-                            <properties>
-<property name="returnClass"/>
-<property name="xsl-file" value="xsl/accounttosolradd.xsl"/>
-<property name="ignoreBadInput"/>
-<property name="maxActiveTransformers" value="5"/>
-<property name="encoding"/>
-<property name="transformerFactoryClass"/>
-<property name="outputEncoding"/>
-<property name="mimeType"/>
-<property name="auxiliary;index" value="6"/>
-<property name="maxIdleTransformers" value="2"/>
-<property name="uriResolver-ref"/>
-                            </properties>
-                        </pattern>
-                    </lane>
-                    <lane hadOnlyOneElement="false" index="8" isChoiceOtherwiseLane="false" entity-id="f0525347-7b01-489e-9b1d-66fccac076a2">
-                        <pattern name="Customer XSLT" type="http://www.mulesoft.org/schema/mule/xml/xslt-transformer" entity-id="XSLT#2">
-                            <graphicalData x="0" y="0" width="0" height="0"/>
-                            <properties>
-<property name="returnClass"/>
-<property name="xsl-file" value="xsl/addCustomertodb.xsl"/>
-<property name="ignoreBadInput"/>
-<property name="maxActiveTransformers" value="5"/>
-<property name="encoding"/>
-<property name="transformerFactoryClass"/>
-<property name="outputEncoding" value="UTF-8"/>
-<property name="mimeType"/>
-<property name="auxiliary;index" value="8"/>
-<property name="maxIdleTransformers" value="2"/>
-<property name="uriResolver-ref"/>
-                            </properties>
-                        </pattern>
-                    </lane>
-                    <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="true" entity-id="5d8d86b1-0f84-43a9-8d72-ca8fef4d9bbe"/>
-                </compartment>
-            </splitter>
             <pattern name="Object to String" type="http://www.mulesoft.org/schema/mule/core/object-to-string-transformer" entity-id="Object to String#1">
                 <graphicalData x="0" y="0" width="0" height="0"/>
                 <properties>
@@ -104,7 +45,7 @@
                     <property name="ignoreBadInput"/>
                     <property name="encoding"/>
                     <property name="mimeType"/>
-                    <property name="auxiliary;index" value="9"/>
+                    <property name="auxiliary;index" value="4"/>
                 </properties>
             </pattern>
             <pattern name="Java" type="org.mule.tooling.ui.modules.core.pattern.customTransformer" entity-id="Java#1">
@@ -115,7 +56,18 @@
                     <property name="encoding"/>
                     <property name="class" value="com.temenos.dataframework.transformer.T24XmlToDBXml"/>
                     <property name="mimeType"/>
-                    <property name="auxiliary;index" value="10"/>
+                    <property name="auxiliary;index" value="5"/>
+                </properties>
+            </pattern>
+            <pattern name="Java" type="org.mule.tooling.ui.modules.core.pattern.customTransformer" entity-id="Java#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="returnClass"/>
+                    <property name="ignoreBadInput"/>
+                    <property name="encoding"/>
+                    <property name="class" value="com.temenos.dataframework.transformer.CustomXSLTTransformer"/>
+                    <property name="mimeType"/>
+                    <property name="auxiliary;index" value="6"/>
                 </properties>
             </pattern>
             <pattern name="Collection Splitter" type="http://www.mulesoft.org/schema/mule/core/collection-splitter" entity-id="Collection Splitter#1">
@@ -124,7 +76,7 @@
                     <property name="businessEventsLabel"/>
                     <property name="enableCorrelation"/>
                     <property name="tracking:enable-default-events"/>
-                    <property name="auxiliary;index" value="11"/>
+                    <property name="auxiliary;index" value="7"/>
                 </properties>
             </pattern>
             <pattern name="Logger" type="http://www.mulesoft.org/schema/mule/core/logger" entity-id="Logger#2">
@@ -133,7 +85,7 @@
                     <property name="message" value="#[payload]"/>
                     <property name="category"/>
                     <property name="level" value="INFO"/>
-                    <property name="auxiliary;index" value="12"/>
+                    <property name="auxiliary;index" value="8"/>
                 </properties>
             </pattern>
             <pattern name="Variable" type="http://www.mulesoft.org/schema/mule/core/variable-transformer" entity-id="Variable#1">
@@ -142,7 +94,7 @@
                     <property name="variableName" value="query"/>
                     <property name="value" value="#[message.payload]"/>
                     <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/core/set-variable"/>
-                    <property name="auxiliary;index" value="13"/>
+                    <property name="auxiliary;index" value="9"/>
                 </properties>
             </pattern>
             <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="Generic" type="http://www.mulesoft.org/schema/mule/core/endpoint" entity-id="Generic#1">
@@ -158,9 +110,9 @@
                     <property name="mimeType"/>
                     <property name="responseTimeout"/>
                     <property name="tracking:enable-default-events"/>
-                    <property name="auxiliary;index" value="14"/>
+                    <property name="auxiliary;index" value="10"/>
                     <property name="exchange-pattern" value="request-response"/>
-                    <property name="connector-ref" value="Database"/>
+                    <property name="connector-ref" value="jdbcConnector"/>
                 </properties>
             </endpoint>
         </lane>

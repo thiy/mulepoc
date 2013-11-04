@@ -1,101 +1,58 @@
 package com.temenos.dataframework.transformer;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.StringWriter;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.mule.api.transformer.TransformerException;
 import org.mule.transformer.AbstractTransformer;
-
-import com.temenos.dataframework.database.Database;
-import com.temenos.dataframework.database.Table;
-import com.temenos.dataframework.database.Table.Column;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 public class T24XmlToDBXml extends AbstractTransformer {
 
 	public Object doTransform(Object src, String encoding)
 			throws TransformerException {
-		
-		Database database = null;
-		JAXBContext jaxbContext;
+
+		TransformerFactory tFactory = TransformerFactory.newInstance();
+		StringWriter outWriter = new StringWriter();
+
 		try {
-			jaxbContext = JAXBContext.newInstance(Database.class);
-		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+			StreamResult result = new StreamResult(outWriter);
+			System.out.println("xsl/"+getRootElement((String) src)+"ToDB.xsl");
+			InputStream input = this.getClass().getClassLoader()
+                    .getResourceAsStream("xsl/"+getRootElement((String) src)+"ToDB.xsl");
+			System.out.println(input);
+			Transformer transformer = tFactory.newTransformer(new StreamSource(input));
+			transformer.transform(new StreamSource(new StringReader(
+					(String) src)), result);
 
-		StringReader reader = new StringReader((String)src);
-		database = (Database) unmarshaller.unmarshal(reader);
-		
-		} catch (JAXBException e) {
-			throw new TransformerException(this, e);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		List<String> dmlStatement = new ArrayList<String>();
-		for(Table table: database.getTable()) {
-			
-						
-			if("insert".equalsIgnoreCase(table.getAction())) {
-				dmlStatement.add(generateInsertStatement(table));
-			} else if("update".equalsIgnoreCase(table.getAction())) {
-				dmlStatement.add(generateUpdateStatement(table));
-			} else if("delete".equalsIgnoreCase(table.getAction())) {
-				dmlStatement.add(generateDeleteStatement(table));
-			}
-			
-		}
-		return dmlStatement;
+		System.out.println(outWriter.toString());
+		return outWriter.toString();
 	}
 
-	private String generateInsertStatement(Table table) {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("INSERT INTO ").append(table.getTableName());
-		StringBuffer columnNames = new StringBuffer();
-		StringBuffer columnValues = new StringBuffer();
-		boolean firstElement = true;
-		
-		for(Column column : table.getColumn()) {
-			if(!firstElement){
-				columnNames.append(", ");
-				columnValues.append(", ");
-			} else {
-				firstElement = false;
-			}
-			columnNames.append(column.getColumnName());
-			columnValues.append("'").append(column.getValue()).append("'");
-		}
-		
-		buffer.append(" (").append(columnNames).append(") VALUES (").append(columnValues).append(")");
+	private String getRootElement(String str) throws ParserConfigurationException, SAXException, IOException {
+			DocumentBuilderFactory fact = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = fact.newDocumentBuilder();
+			Document doc = builder.parse(new ByteArrayInputStream(str.getBytes("UTF-8")));
+			Node node = doc.getDocumentElement();
+			String root = node.getNodeName();
+			System.out.println(root);
+			return root;
 
-		return buffer.toString();
 	}
-
-	private String generateUpdateStatement(Table table) {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("UPDATE ").append(table.getTableName()).append(" SET ");
-		boolean firstElement = true;
-		
-		for(Column column : table.getColumn()) {
-			if(!firstElement){
-				buffer.append(", ");
-			} else {
-				firstElement = false;
-			}
-			buffer.append(column.getColumnName()).append("=").append("'").append(column.getValue()).append("'");
-		}
-		
-		buffer.append(" WHERE ").append(table.getWhere().getColumnName()).append("='").append(table.getWhere().getValue()).append("'");
-		
-		return buffer.toString();
-	}
-
-	private String generateDeleteStatement(Table table) {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("DELETE FROM ").append(table.getTableName());
-		buffer.append(" WHERE ").append(table.getWhere().getColumnName()).append("='").append(table.getWhere().getValue()).append("'");
-		return buffer.toString();
-	}
-
 }

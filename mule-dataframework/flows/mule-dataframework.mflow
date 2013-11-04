@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-dataframework">
-    <flow SubFlow="false" name="jmsFlow" entity-id="30bc68ca-ec38-4d29-8457-73e749b3f5c4">
+    <flow SubFlow="false" name="jmsFlow" entity-id="71c17cd3-e55f-470b-b803-95f385b01b94">
         <properties>
             <property name="processingStrategy"/>
             <property name="processingStrategy2"/>
@@ -47,7 +47,7 @@
                 </properties>
                 <pattern name="All" type="org.mule.tooling.ui.modules.core.pattern.all" entity-id="All#2"/>
                 <compartment entity-id="compartment#1">
-                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="ceeb436f-3d07-4c7d-b6ff-03dcb0a0bb83">
+                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="ba49bf5e-d54e-4164-b6f7-2b4a84b6c6b2">
                         <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="SolrVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
                             <graphicalData x="0" y="0" width="0" height="0"/>
                             <properties>
@@ -68,7 +68,7 @@
                             </properties>
                         </endpoint>
                     </lane>
-                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="634cd9cf-4d96-4185-a9fe-4a11883916ba">
+                    <lane hadOnlyOneElement="true" index="0" isChoiceOtherwiseLane="false" entity-id="7c2420c3-8cf0-4f5b-b5f6-3a7becca3994">
                         <endpoint direction="Outbound" message-exchange-pattern="OneWay" name="DBVM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#2">
                             <graphicalData x="0" y="0" width="0" height="0"/>
                             <properties>

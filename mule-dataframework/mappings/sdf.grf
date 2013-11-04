@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="tselvaraj" created="Fri Nov 01 09:49:24 GMT 2013" guiVersion="3.3.2" id="1383577887038" licenseCode="CLPXDMULES37812333BY" licenseType="Commercial" modified="Fri Nov 01 09:49:24 GMT 2013" modifiedBy="tselvaraj" name="sdf_grf" preview-file="${Project_Home}/src/test/resources/customer.xml" revision="1.0" showComponentDetails="false">
+<Global>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:addressList/ns0:address" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e0932f9-904c-41f5-976d-377f6848932e" _parent_id="__parent_id" _type="Input" id="a68406eb-b63c-4c20-8f23-2b6882f4c9fd">
+<Record fieldDelimiter="|" name="address" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:addressList/ns0:address/@language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:addressList/ns0:address/@index" containerType="SINGLE" label="index" name="index" type="integer"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:addressList/ns0:address/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/database/table/column" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="00b234b3-ec30-4f69-bda9-1850c2d160e6" _parent_id="__parent_id" _type="Output" id="6f86bb54-01ae-4087-8c14-7030a28cf51d">
+<Record fieldDelimiter="|" name="column" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/database/table/column/@columnName" containerType="SINGLE" label="columnName" name="columnName" type="string"/>
+<Field __sourcePath="{}/database/table/column/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/database/table/column" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="00b234b3-ec30-4f69-bda9-1850c2d160e6" _parent_id="__parent_id" _type="Output" id="442adad6-7295-49ff-8910-b71abe4e61a1">
+<Record fieldDelimiter="|" name="column" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/database/table/column/@columnName" containerType="SINGLE" label="columnName" name="columnName" type="string"/>
+<Field __sourcePath="{}/database/table/column/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer" _dataStructure="OBJECT" _id="__id" _type="Input" id="0e0932f9-904c-41f5-976d-377f6848932e">
+<Record fieldDelimiter="|" name="Customer" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:id" containerType="SINGLE" label="id" name="id" type="decimal"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:mnemonic" containerType="SINGLE" label="mnemonic" name="mnemonic" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:table" containerType="SINGLE" label="table" name="table" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/database" _dataStructure="OBJECT" _id="__id" _type="Output" id="11d49c3e-9814-42d5-814d-fd231b0bbb55">
+<Record fieldDelimiter="|" name="database" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name1List/ns0:name1" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e0932f9-904c-41f5-976d-377f6848932e" _parent_id="__parent_id" _type="Input" id="35920537-52dc-4dc6-a711-e3fca98634d2">
+<Record fieldDelimiter="|" name="name1" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name1List/ns0:name1/@language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name1List/ns0:name1/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name2List/ns0:name2" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e0932f9-904c-41f5-976d-377f6848932e" _parent_id="__parent_id" _type="Input" id="0ac9fb9f-3261-4a9a-bf77-7c39d17dcde4">
+<Record fieldDelimiter="|" name="name2" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name2List/ns0:name2/@language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:name2List/ns0:name2/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:postCodeList/ns0:postCode" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e0932f9-904c-41f5-976d-377f6848932e" _parent_id="__parent_id" _type="Input" id="44999f83-c753-4b62-acf1-3a26ce2a4176">
+<Record fieldDelimiter="|" name="postCode" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:postCodeList/ns0:postCode/@language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:postCodeList/ns0:postCode/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:shortNameList/ns0:shortName" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="0e0932f9-904c-41f5-976d-377f6848932e" _parent_id="__parent_id" _type="Input" id="2f4e19d2-6b62-4e8d-b827-5439754ea805">
+<Record fieldDelimiter="|" name="shortName" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:shortNameList/ns0:shortName/@language" containerType="SINGLE" label="language" name="language" type="string"/>
+<Field __sourcePath="{http://www.temenos.com/T24/event/T24Integration/Customer=ns0}/ns0:Customer/ns0:shortNameList/ns0:shortName/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+</Record>
+</Metadata>
+<Metadata __sourcePath="{}/database/table" _dataStructure="SINGLE_DIMENSIONAL_COLLECTION" _id="__id" _metadataParentId="11d49c3e-9814-42d5-814d-fd231b0bbb55" _parent_id="__parent_id" _type="Output" id="00b234b3-ec30-4f69-bda9-1850c2d160e6">
+<Record fieldDelimiter="|" name="table" recordDelimiter="\n\\|\r\n\\|\r" type="delimited">
+<Field __artificialType="_parent_id" __systemManaged="true" name="__parent_id" type="string"/>
+<Field __artificialType="_id" __systemManaged="true" name="__id" type="string"/>
+<Field __sourcePath="{}/database/table/where/@columnName" containerType="SINGLE" label="columnName" name="columnName" type="string"/>
+<Field __sourcePath="{}/database/table/where/@text()" containerType="SINGLE" label="text()" name="text" type="string"/>
+<Field __sourcePath="{}/database/table/@tableName" containerType="SINGLE" label="tableName" name="tableName" type="string"/>
+<Field __sourcePath="{}/database/table/@action" containerType="SINGLE" label="action" name="action" type="string"/>
+<Field __sourcePath="{}/database/table/column/@columnName" containerType="SINGLE" label="columnName" name="field_0" type="string"/>
+<Field __sourcePath="{}/database/table/column/@text()" containerType="SINGLE" label="text()" name="text1" type="string"/>
+</Record>
+</Metadata>
+<Dictionary>
+<Entry id="DictionaryEntry0" input="true" name="inputPayload" output="false" type="object"/>
+<Entry id="DictionaryEntry1" input="false" name="outputPayload" output="true" type="object"/>
+</Dictionary>
+</Global>
+<Phase number="0">
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:outputPayload" guiHeight="0" guiName="XML WRITER" guiWidth="0" guiX="900" guiY="20" id="EXT_XML_WRITER0" type="EXT_XML_WRITER" xmlSchemaURL=".\src\main\resources\xsd\database.xsd">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns:clover="http://www.cloveretl.com/ns/xmlmapping" clover:inPort="0">
+  <table>
+    <column columnName="$1.columnName" clover:inPort="1" clover:key="__parent_id" clover:parentKey="__id">$1.text</column>
+    <column columnName="$2.columnName" clover:inPort="2" clover:key="__parent_id" clover:parentKey="__id">$2.text</column>
+  </table>
+</database>]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[database]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Customer' -&gt; 'database'" guiWidth="0" guiX="460" guiY="20" id="REFORMAT0" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+//END -> DO NOT REMOVE
+]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Customer' -&gt; 'column'" guiWidth="0" guiX="460" guiY="120" id="REFORMAT1" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.text = (isnull(input.id) ? null : num2str(input.id))  + input.mnemonic;
+output.columnName = "id";]]></attr>
+</Node>
+<Node enabled="enabled" guiHeight="0" guiName="Foreach 'ns0:Customer' -&gt; 'column'" guiWidth="0" guiX="460" guiY="220" id="REFORMAT2" transformClass="com.mulesoft.datamapper.transform.MelRecordTransform" type="REFORMAT">
+<attr name="melScript"><![CDATA[//MEL
+//START -> DO NOT REMOVE
+output.__id = input.__id;
+output.__parent_id = input.__id;
+//END -> DO NOT REMOVE
+output.columnName = "mnemonic";
+output.text = (isnull(input.id) ? null : num2str(input.id)) + input.mnemonic;]]></attr>
+</Node>
+<Node charset="UTF-8" enabled="enabled" fileURL="dict:inputPayload" guiHeight="0" guiName="XML READER" guiWidth="0" guiX="20" guiY="20" id="XML_READER0" type="XML_READER">
+<attr name="xmlSchemaURL"><![CDATA[.\src\main\resources\xsd\Customer.xsd]]></attr>
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context xpath=".">
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" outPort="1" sequenceField="__id" xpath="/ns0:Customer">
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" outPort="0" sequenceField="__id" xpath="/ns0:Customer">
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+  <Context namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" outPort="2" sequenceField="__id" xpath="/ns0:Customer">
+    <Mapping cloverField="id" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:id"/>
+    <Mapping cloverField="mnemonic" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:mnemonic"/>
+    <Mapping cloverField="table" namespacePaths="ns0=&quot;http://www.temenos.com/T24/event/T24Integration/Customer&quot;" trim="true" xpath="ns0:table"/>
+  </Context>
+</Context>
+]]></attr>
+<attr name="_data_format"><![CDATA[XML]]></attr>
+<attr name="__rootGlobalElementName"><![CDATA[{http://www.temenos.com/T24/event/T24Integration/Customer}Customer]]></attr>
+</Node>
+<Edge debugMode="true" fromNode="REFORMAT0:0" guiBendpoints="" id="Edge1" inPort="Port 0 (in)" metadata="11d49c3e-9814-42d5-814d-fd231b0bbb55" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:0"/>
+<Edge debugMode="true" fromNode="REFORMAT1:0" guiBendpoints="" id="Edge3" inPort="Port 1 (in)" metadata="6f86bb54-01ae-4087-8c14-7030a28cf51d" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:1"/>
+<Edge debugMode="true" fromNode="REFORMAT2:0" guiBendpoints="" id="Edge5" inPort="Port 2 (in)" metadata="442adad6-7295-49ff-8910-b71abe4e61a1" outPort="Port 0 (out)" toNode="EXT_XML_WRITER0:2"/>
+<Edge debugMode="true" fromNode="XML_READER0:0" guiBendpoints="" id="Edge0" inPort="Port 0 (in)" metadata="0e0932f9-904c-41f5-976d-377f6848932e" outPort="Port 0 (out)" toNode="REFORMAT0:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:1" guiBendpoints="" id="Edge2" inPort="Port 0 (in)" metadata="0e0932f9-904c-41f5-976d-377f6848932e" outPort="Port 1 (out)" toNode="REFORMAT1:0"/>
+<Edge debugMode="true" fromNode="XML_READER0:2" guiBendpoints="" id="Edge4" inPort="Port 0 (in)" metadata="0e0932f9-904c-41f5-976d-377f6848932e" outPort="Port 2 (out)" toNode="REFORMAT2:0"/>
+</Phase>
+</Graph>

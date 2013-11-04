@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mule xmlns:file="http://www.mulesoft.org/schema/mule/file"
-	xmlns:jdbc-ee="http://www.mulesoft.org/schema/mule/ee/jdbc"
+	xmlns:jdbc="http://www.mulesoft.org/schema/mule/jdbc"
 	xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
 	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml"
 	xmlns:data-mapper="http://www.mulesoft.org/schema/mule/ee/data-mapper"
@@ -15,7 +15,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-http://www.mulesoft.org/schema/mule/ee/jdbc http://www.mulesoft.org/schema/mule/ee/jdbc/current/mule-jdbc-ee.xsd
+http://www.mulesoft.org/schema/mule/jdbc http://www.mulesoft.org/schema/mule/jdbc/current/mule-jdbc.xsd
 http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
 http://www.mulesoft.org/schema/mule/ee/data-mapper http://www.mulesoft.org/schema/mule/ee/data-mapper/current/mule-data-mapper.xsd
 http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
@@ -23,20 +23,13 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
     <flow name="dbFlow" doc:name="dbFlow">
         <vm:inbound-endpoint exchange-pattern="one-way" ref="DBVM" doc:name="DBVM" />
         <logger message="T24XML recieved in db flow #[payload]" level="INFO" doc:name="Logger"/>
-         <choice doc:name="Choice">
-            <when expression="/Account" evaluator="xpath">
-                <mulexml:xslt-transformer maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="xsl/accounttosolradd.xsl" doc:name="Account XSLT"/>
-            </when>
-            <when expression="/Customer" evaluator="xpath">
-       			<mulexml:xslt-transformer maxIdleTransformers="2" maxActiveTransformers="5" xsl-file="xsl/addCustomertodb.xsl" outputEncoding="UTF-8" doc:name="Customer XSLT"/>
-            </when>
-        </choice>
       	<object-to-string-transformer doc:name="Object to String"/>
         <custom-transformer class="com.temenos.dataframework.transformer.T24XmlToDBXml" doc:name="Java" />
+        <custom-transformer class="com.temenos.dataframework.transformer.CustomXSLTTransformer" doc:name="Java" />
         <collection-splitter doc:name="Collection Splitter"/>
         <logger message="#[payload]" level="INFO" doc:name="Logger"/>
         <set-variable variableName="query" value="#[message.payload]" doc:name="Variable" />
-        <outbound-endpoint address="jdbc://#[flowVars['query']]" exchange-pattern="request-response" doc:name="Generic" connector-ref="Database"/>
+        <outbound-endpoint address="jdbc://#[flowVars['query']]" exchange-pattern="request-response" doc:name="Generic" connector-ref="jdbcConnector"/>
 	</flow>
 
 
